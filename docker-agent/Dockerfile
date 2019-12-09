@@ -15,7 +15,7 @@ RUN apt-get install -qy maven
 # Cleanup old packages
 RUN apt-get -qy autoremove
 # Add user jenkins to the image
-RUN adduser --quiet jenkins
+RUN useradd -ms /bin/bash jenkins
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "jenkins:jenkins" | chpasswd
 RUN mkdir /home/jenkins/.m2
